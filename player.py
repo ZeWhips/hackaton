@@ -10,7 +10,7 @@ class Player:
         self._direction = direction
 
     def getPos(self):
-        return self._pos.copy() 
+        return self._pos
 
     def getDirection(self):
         return self._direction
@@ -21,26 +21,26 @@ class Player:
     def move_player(self):
         head = self.getPos()
         map = self.getMap()
-        x, y = head
+        x, y = head[0], head[1]
         direction = self.getDirection()
         if direction == 'up':
             if 0 < map[x][y-1] < 10:
-                return "rencontre un mur "
+                print ("rencontre un mur ")
             else: 
                 x, y = x, y-1
         elif direction == 'down' :
             if 0 < map[x][y+1] < 10:
-                return "rencontre un mur "
+                print("rencontre un mur ")
             else:
                 x, y = x, y+1
         elif direction == 'left' :
             if 0 < map[x-1][y] < 10:
-                return "rencontre un mur "
+                print("rencontre un mur ")
             else:
                 x, y = x-1, y
         elif direction == 'right' :
-            if 0 < map[x+1][y] < 10:
-                return "rencontre un mur "
+            if (0 < map[x+1][y]< 10):
+                print("rencontre un mur ")
             else:
                 x, y = x+1, y
-        return (x, y)
+        return [x, y]
