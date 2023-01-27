@@ -1,5 +1,6 @@
 from assets import Assets
 import numpy as np
+import random as rd
 
 
 class Map():
@@ -109,3 +110,31 @@ class Map():
 
                 if case == 20:
                     fenetre.blit(Assets.assetPerso, (x,y), Assets.persosize)
+
+
+def generate_coin(niv, n):
+    '''Generate a given number n of coins per niv'''
+    w, h = niv.shape
+    for i in range (n):
+        x, y = rd.randint(0, w-1), rd.randint(0, h-1)
+        while 1<= niv[x][y] <=9 and niv[x][y] != 20:
+            x, y = rd.randint(0, h-1), rd.randint(0, w-1)
+        niv[x][y] = 10 
+
+def generate_potion(niv, n):
+    '''Generate a given number n of potion per niv'''
+    w, h = niv.shape
+    for i in range (n):
+        x, y = rd.randint(0, w-1), rd.randint(0, h-1)
+        while 1<= niv[x][y] <=10 and niv[x][y] != 20: #check if different of walls and coins
+            x, y = rd.randint(0, h-1), rd.randint(0, w-1)
+        niv[x][y] = 11
+
+def generate_trap(niv, n):
+    '''Generate a given number n of trap per niv'''
+    w, h = niv.shape
+    for i in range (n):
+        x, y = rd.randint(0, w-1), rd.randint(0, h-1)
+        while 1<= niv[x][y] <=11 and niv[x][y] != 20: #check if different of walls and coins
+            x, y = rd.randint(0, h-1), rd.randint(0, w-1)
+        niv[x][y] = 12
