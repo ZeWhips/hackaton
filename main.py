@@ -19,8 +19,8 @@ m.showMap(m.niv1, screen)
 
 #pos init
 
-while(running):
-    clock.tick(10)
+while(interaction._running):
+    clock.tick(1)
     #charge la touche rentrée sur le clavier (interactions)
     interaction.process_event()
     direction = interaction._direction
@@ -31,4 +31,4 @@ while(running):
     #display new map
     pg.display.update()
 
-
+pg.quit()
