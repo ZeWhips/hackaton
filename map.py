@@ -48,9 +48,13 @@ class Map():
         [9, 7, 0, 0, 0, 0, 3, 9, 9, 9, 9, 9, 9],
         [9, 6, 5, 5, 5, 5, 4, 9, 9, 9, 9, 9, 9]])
 
-    niv2echelle = map(np.where(niv2 == 13), [niv1, niv3])
+    niv2ech = [niv1, niv3]
+    niv2echelle = {}
 
-    niv3echelle = map(np.where(niv2 == 13), [niv2])
+    def __init__(self):
+        self.niv2echelle = {tuple(tup): self.niv2ech[i] for i, tup in enumerate(np.where(self.niv2 == 13))}
+
+    #niv3echelle = dict(zip(np.where(niv2 == 13), [niv2]))
     
 
     
@@ -101,4 +105,3 @@ class Map():
 
                 if case == 20:
                     fenetre.blit(Assets.assetPerso, (x,y), Assets.persosize)
-
