@@ -20,7 +20,7 @@ m.showMap(m.niv1, screen)
 #pos init
 
 while(interaction._running):
-    clock.tick(1)
+    clock.tick(2)
     #charge la touche rentrée sur le clavier (interactions)
     interaction.process_event()
     player.state(position, interaction._direction, m.niv1)
