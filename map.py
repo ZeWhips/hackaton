@@ -56,6 +56,10 @@ class Map():
 
     #niv3echelle = dict(zip(np.where(niv2 == 13), [niv2]))
     
+    def get_echelle(self, niveau):
+        if np.sum(niveau[niveau==13]) >= 1:
+            if niveau == self.niv2:
+                return self.niv2echelle
 
     
 
