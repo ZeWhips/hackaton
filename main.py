@@ -27,6 +27,7 @@ while(interaction._running):
     player.state(position, direction, m.niv1)
     #methode du joueur(touche clavier) renvoie une nouvelle map
     position = player.move_player()
+    m.niv1 = player.getMap
 
     #display new map
     pg.display.update()
