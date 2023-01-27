@@ -1,14 +1,13 @@
 import pygame as pg
 
-class Intercations:
+class Interactions:
 
-    def __init__(self, map):
+    def __init__(self):
         '''direction corresponds to the last input of the player,
         map is a numpy array
         player is the instance of the class Player'''
         self._direction = None
         self._running = True
-        self._map = map
 
 
     def process_event(self):
@@ -34,18 +33,6 @@ class Intercations:
                     self._direction = 'right'
 
         
-    def wall_collision(self, player):
-        '''True if the player hits a wall'''
-        x, y = player.getPos()
-        return self._map[x][y] == 1
 
-
-    def pick_object(self, player, coin, potion):
-        x, y = player.getPos()
-        if (x, y) == (coin._x, coin._y):
-            message = coin._message
-        elif (x, y) == (potion._x, potion._y):
-            message = potion._message
-        return message 
 
     
