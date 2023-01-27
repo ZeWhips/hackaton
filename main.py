@@ -23,12 +23,16 @@ while(interaction._running):
     clock.tick(1)
     #charge la touche rentrée sur le clavier (interactions)
     interaction.process_event()
-    direction = interaction._direction
-    player.state(position, direction, m.niv1)
+    player.state(position, interaction._direction, m.niv1)
+    
     #methode du joueur(touche clavier) renvoie une nouvelle map
     position = player.move_player()
-    m.niv1 = player.getMap
 
+    m.niv1 = player.getMap()
+    
+    m.showMap(m.niv1, screen)
+
+    interaction._direction = None
     #display new map
     pg.display.update()
 
