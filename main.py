@@ -16,6 +16,7 @@ clock = pg.time.Clock()
 h, w = m.get_size(m.niv1)
 screen = pg.display.set_mode((h, w))
 m.showMap(m.niv1, screen)
+currentniveau = m.niv1
 
 #pos init
 
@@ -23,14 +24,15 @@ while(interaction._running):
     clock.tick(1)
     #charge la touche rentrée sur le clavier (interactions)
     interaction.process_event()
-    player.state(position, interaction._direction, m.niv1)
+    player.state(position, interaction._direction, currentniveau)
     
     #methode du joueur(touche clavier) renvoie une nouvelle map
     position = player.move_player()
 
-    m.niv1 = player.getMap()
+    currentniveau = player.getMap()
+    h, w = m.get_size(currentniveau)
     
-    m.showMap(m.niv1, screen)
+    m.showMap(currentniveau, screen)
 
     interaction._direction = None
     #display new map
