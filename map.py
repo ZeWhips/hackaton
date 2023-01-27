@@ -55,11 +55,15 @@ class Map():
     def __init__(self):
         self.niv2echelle = {tuple(tup): self.niv2ech[i] for i, tup in enumerate(np.where(self.niv2 == 13))}
 
+        generate_coin(self.niv1, 2)
+        generate_potion(self.niv1, 1)
+        generate_trap(self.niv1)
+
     #niv3echelle = dict(zip(np.where(niv2 == 13), [niv2]))
     
     def get_echelle(self, niveau):
         if np.sum(niveau[niveau==13]) >= 1:
-            if niveau == self.niv2:
+            if (niveau == self.niv2).all():
                 return self.niv2echelle
 
     
