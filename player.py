@@ -1,9 +1,13 @@
 class player:
     """A class that represents the snake"""
 
-    def __init__(self, position, direction):
+    def __init__(self, position):
       
-        self._pos = position #the list of the positions where the snake is
+        self._pos = position 
+
+    def state(self, position, direction):
+      
+        self._pos = position 
         self._direction = direction
 
     def getPos(self):
