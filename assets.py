@@ -13,6 +13,9 @@ class Assets():
     murpleinsize = (8*32, 7*32, 32, 32)
     fondsize = (6*32, 0, 4*32, 3*32)
     echellesize = (9*32, 3*32, 32, 32)
+    moneysize = (6*32, 8*32, 32, 32)
+    trapsize = (4*32, 6*32, 32, 32)
+    potionsize = (7*32, 8*32, 32, 32)
 
 
     assetPerso = pg.transform.scale(pg.image.load("assets/character and tileset/Dungeon_Character_2.png"), (224, 64))
