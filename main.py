@@ -21,7 +21,7 @@ currentniveau = m.niv1
 #pos init
 
 while(interaction._running):
-    clock.tick(1)
+    clock.tick(25)
     #charge la touche rentrée sur le clavier (interactions)
     interaction.process_event()
     player.state(position, interaction._direction, currentniveau)

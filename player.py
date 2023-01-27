@@ -23,28 +23,28 @@ class Player:
         map = self.getMap()
         x, y = head[0], head[1]
         direction = self.getDirection()
-        if direction == 'up':
+        if direction == 'left':
             if 0 < map[x][y-1] < 10:
                 print ("rencontre un mur ")
             else:
                 map[x][y] = 0
                 x, y = x, y-1
                 map[x][y] = 20
-        elif direction == 'down' :
+        elif direction == 'right' :
             if 0 < map[x][y+1] < 10:
                 print("rencontre un mur ")
             else:
                 map[x][y] = 0
                 x, y = x, y+1
                 map[x][y] = 20
-        elif direction == 'left' :
+        elif direction == 'up' :
             if 0 < map[x-1][y] < 10:
                 print("rencontre un mur ")
             else:
                 map[x][y] = 0
                 x, y = x-1, y
                 map[x][y] = 20
-        elif direction == 'right' :
+        elif direction == 'down' :
             if (0 < map[x+1][y]< 10):
                 print("rencontre un mur ")
             else:
