@@ -1,5 +1,4 @@
 class player:
-    """A class that represents the snake"""
 
     def __init__(self, position):
       
