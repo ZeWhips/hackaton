@@ -57,7 +57,7 @@ class Map():
 
         generate_coin(self.niv1, 2)
         generate_potion(self.niv1, 1)
-        generate_trap(self.niv1)
+        generate_trap(self.niv1, 1)
 
     #niv3echelle = dict(zip(np.where(niv2 == 13), [niv2]))
     
