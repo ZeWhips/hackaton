@@ -18,7 +18,7 @@ class player:
     def getMap(self):
         return self._map
    
-    def move_head(self):
+    def move_player(self):
         head = self.getPos()
         map = self.getMap()
         x, y = head
