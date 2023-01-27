@@ -28,19 +28,24 @@ class Player:
                 print ("rencontre un mur ")
             else: 
                 x, y = x, y-1
+                map[x][y] = 20
         elif direction == 'down' :
             if 0 < map[x][y+1] < 10:
                 print("rencontre un mur ")
             else:
                 x, y = x, y+1
+                map[x][y] = 20
         elif direction == 'left' :
             if 0 < map[x-1][y] < 10:
                 print("rencontre un mur ")
             else:
                 x, y = x-1, y
+                map[x][y] = 20
         elif direction == 'right' :
             if (0 < map[x+1][y]< 10):
                 print("rencontre un mur ")
             else:
                 x, y = x+1, y
+                map[x][y] = 20
         return [x, y]
+    
